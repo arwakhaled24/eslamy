@@ -123,7 +123,8 @@ class Quran_tab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset("assets/images/quran_tab_logo.png"),
+        Expanded(
+            flex: 1, child: Image.asset("assets/images/quran_tab_logo.png")),
         Container(
           margin: EdgeInsets.only(top: 3, bottom: 3),
           width: double.infinity,
@@ -138,20 +139,21 @@ class Quran_tab extends StatelessWidget {
           height: 2,
         ),
         Expanded(
+            flex: 3,
             child: ListView.separated(
-          itemBuilder: (context, index) {
-            return VersNameWidget(index: index, title: Names[index]);
-          },
-          itemCount: Names.length,
-          separatorBuilder: (context, index) {
-            return Container(
-              width: double.infinity,
-              color: Theme.of(context).primaryColor,
-              height: 1.5,
-              margin: EdgeInsets.symmetric(horizontal: 24),
-            );
-          },
-        ))
+              itemBuilder: (context, index) {
+                return VersNameWidget(index: index, title: Names[index]);
+              },
+              itemCount: Names.length,
+              separatorBuilder: (context, index) {
+                return Container(
+                  width: double.infinity,
+                  color: Theme.of(context).primaryColor,
+                  height: 1.5,
+                  margin: EdgeInsets.symmetric(horizontal: 24),
+                );
+              },
+            ))
       ],
     );
   }

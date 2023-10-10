@@ -1,7 +1,7 @@
 import 'package:eslamy/Home/hadeth/hadeth.dart';
+import 'package:eslamy/Home/hadeth/hadethTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 class Hadeth_tab extends StatefulWidget {
   @override
   State<Hadeth_tab> createState() => _Hadeth_tabState();
@@ -36,7 +36,7 @@ class _Hadeth_tabState extends State<Hadeth_tab> {
                Center(child: CircularProgressIndicator()):*/
               ListView.separated(
             itemBuilder: (context, index) {
-              return Center(child: Text(allhadeth[index].title));
+              return Center(child: HadethTitleWidget(hadeth: allhadeth[index]));
             },
             itemCount: allhadeth.length,
             separatorBuilder: (context, index) {

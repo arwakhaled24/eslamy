@@ -1,4 +1,5 @@
 import 'package:eslamy/Home/HomeScreen.dart';
+import 'package:eslamy/Home/hadeth/hadeth_detalis_screen.dart';
 import 'package:eslamy/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.RouteName: (context) => HomeScreen(),
         SplashScreen.RouteName: (context) => SplashScreen(),
         SuraDetailsScreen.routName: (context) => SuraDetailsScreen(),
+        Hadeth_details_screen.routeName: (context) => Hadeth_details_screen(),
       },
       theme: ThemeData(
           backgroundColor: Colors.transparent,

@@ -1,4 +1,3 @@
-import 'package:eslamy/Home/sura_details_screen/vers_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -30,26 +29,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
               Expanded(
                 child: Card(
                   elevation: 20,
-                  margin: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                  margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  child: chapterContant.isEmpty
-                      ? Center(child: CircularProgressIndicator())
-                      : ListView.separated(
-                          itemBuilder: (context, index) {
-                            return VerContent(content: chapterContant[index]);
-                          },
-                          itemCount: chapterContant.length,
-                          separatorBuilder: (context, index) {
-                            return Container(
-                              color: Theme.of(context).primaryColor,
-                              width: double.infinity,
-                              height: 1,
-                            );
-                          },
-                        ),
                 ),
               ),
             ],
@@ -71,3 +55,20 @@ class SuraDetailsScreenArg {
 
   SuraDetailsScreenArg({required this.title, required this.index});
 }
+/*body: Container(
+          width: width * 0.9,
+            height: height*0.9,
+              margin: EdgeInsets.only(left:width*0.06 ,right:width*0.06 ,bottom:height*0.05,top:height*0.03   ),
+            decoration: BoxDecoration(
+              color: Colors.white ,
+              borderRadius: BorderRadius.circular(24)
+            ),
+            child:
+            ListView.builder(itemBuilder:
+                ( context,index ){
+              return item_hadethDetails(content: args.content[index]);
+            },
+
+
+                itemCount: args.content.length),
+          ),*/
